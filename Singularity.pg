@@ -5,13 +5,13 @@ From: python:3.7
 
 %post
     apt -y update
-    apt -y install --no-install-recommends xz-utils blender wget openmpi-bin postgresql postgresql-contrib
+    apt -y install --no-install-recommends xz-utils blender wget openmpi-bin libcr-dev mpich2 mpich2-doc postgresql postgresql-contrib
 	apt clean
 	
     mkdir -p /blan
 
     # Untar the blender binary
-    wget https://mirror.clarkson.edu/blender/release/Blender2.82/blender-2.82a-linux64.tar.xz
+    wget -q https://mirror.clarkson.edu/blender/release/Blender2.82/blender-2.82a-linux64.tar.xz
     tar -xvf /blender-2.82a-linux64.tar.xz -C /blan
     rm /blender-2.82a-linux64.tar.xz
 
