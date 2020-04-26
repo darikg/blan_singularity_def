@@ -1,0 +1,1 @@
+# blan_singularity_def
