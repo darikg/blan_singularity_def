@@ -4,7 +4,8 @@ From: python:3.7
 %post
     apt -y update
     apt -y install --no-install-recommends xz-utils blender wget openmpi-bin
-
+	apt clean
+	
     mkdir -p /blan
 
     # Untar the blender binary
