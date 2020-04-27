@@ -1,5 +1,5 @@
 BootStrap: docker
-From: continuumio/miniconda
+From: ubuntu:18.04
 
 %files
 	requirements.txt
@@ -11,6 +11,21 @@ From: continuumio/miniconda
 		xz-utils blender wget postgresql postgresql-contrib git mpi
 	apt clean
 	
+	wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+	bash Miniconda3-latest-Linux-x86_64.sh -b
+	rm Miniconda3-latest-Linux-x86_64.sh
+	
+	export PATH="/root/miniconda3/bin:${PATH}"
+	
+	echo "Installing python libraries"
+	conda create -y -n blan1 python=3.7
+	conda activate blan1
+	pip install --no-cache-dir \
+		tensorflow==2.2.0rc0 tensorflow_datasets
+	
+	conda install -y ipython pandas toolz matplotlib imageio 
+		click pyyaml bokeh tables mpi4py pytest
+	
 	echo "Installing Blender"
     mkdir -p /blan
     wget -q https://mirror.clarkson.edu/blender/release/Blender2.82/blender-2.82a-linux64.tar.xz
@@ -18,13 +33,7 @@ From: continuumio/miniconda
     rm /blender-2.82a-linux64.tar.xz
     chmod -R 777 /blan
 	
-	echo "Installing python libraries"
-	conda create -n blan1 python=3.7
-	pip install --no-cache-dir \
-		tensorflow==2.2.0rc0 tensorflow_datasets
 	
-	conda install -y ipython pandas toolz matplotlib imageio 
-		click pyyaml bokeh tables mpi4py pytest
 
 
 %environment
