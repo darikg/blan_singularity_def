@@ -10,14 +10,14 @@ From: python:3.7
 	cat requirements.txt
     apt -y update
     apt -y install --no-install-recommends \
-		xz-utils blender wget postgresql postgresql-contrib git mpich
+		xz-utils blender wget postgresql postgresql-contrib git libopenmpi-dev mpich
 	apt clean
 	
 
 	echo "Installing Blender"
     mkdir -p /blan
     wget -q https://mirror.clarkson.edu/blender/release/Blender2.82/blender-2.82a-linux64.tar.xz
-    tar -xvf /blender-2.82a-linux64.tar.xz -C /blan
+    tar -xf /blender-2.82a-linux64.tar.xz -C /blan
     rm /blender-2.82a-linux64.tar.xz
     chmod -R 777 /blan
 	
