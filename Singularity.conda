@@ -5,13 +5,12 @@ From: ubuntu:18.04
 	requirements.txt
 
 %post
-	cat requirements.txt
     apt -y update
     apt -y install --no-install-recommends \
 		xz-utils blender wget postgresql postgresql-contrib git mpi
 	apt clean
 	
-	wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+	wget --no-check-certificate https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 	bash Miniconda3-latest-Linux-x86_64.sh -b
 	rm Miniconda3-latest-Linux-x86_64.sh
 	
