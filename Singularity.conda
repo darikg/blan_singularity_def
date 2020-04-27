@@ -29,8 +29,7 @@ From: ubuntu:18.04
     tar -xf /blender-2.82a-linux64.tar.xz -C /blan
     rm /blender-2.82a-linux64.tar.xz
     chmod -R 777 /blan
-	
-	
+		
 
 
 %environment
