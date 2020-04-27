@@ -16,12 +16,12 @@ From: ubuntu:18.04
 	
 			
 	echo "Installing python libraries"
-	conda create -y -n blan1 python=3.7
+	/root/miniconda3/bin/conda create -y -n blan1 python=3.7
 	source /root/miniconda3/bin/activate blan1
 	pip install --no-cache-dir \
 		tensorflow==2.2.0rc0 tensorflow_datasets
 	
-	conda install -y ipython pandas toolz matplotlib imageio 
+	/root/miniconda3/bin/conda install -y ipython pandas toolz matplotlib imageio 
 		click pyyaml bokeh tables mpi4py pytest
 	
 	echo "Installing Blender"
