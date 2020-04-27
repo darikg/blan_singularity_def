@@ -17,12 +17,11 @@ From: ubuntu:18.04
 			
 	echo "Installing python libraries"
 	/root/miniconda3/bin/conda create -y -n blan1 python=3.7
-	source /root/miniconda3/bin/activate blan1
-	pip install --no-cache-dir \
-		tensorflow==2.2.0rc0 tensorflow_datasets
+	/root/miniconda3/envs/blan1/bin/python -m pip install --no-cache-dir tensorflow==2.2.0rc0 tensorflow_datasets
+	/root/miniconda3/bin/conda run install -y ipython pandas toolz matplotlib imageio click pyyaml bokeh tables mpi4py pytest
+	/root/miniconda3/bin/conda clean --all -f -y
 	
-	/root/miniconda3/bin/conda install -y ipython pandas toolz matplotlib imageio 
-		click pyyaml bokeh tables mpi4py pytest
+	export PATH=/root/miniconda3/envs/blan1/bin:$PATH
 	
 	echo "Installing Blender"
     mkdir -p /blan
