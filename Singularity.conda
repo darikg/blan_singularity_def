@@ -1,0 +1,35 @@
+BootStrap: docker
+From: continuumio/miniconda
+
+%files
+	requirements.txt
+
+%post
+	cat requirements.txt
+    apt -y update
+    apt -y install --no-install-recommends \
+		xz-utils blender wget postgresql postgresql-contrib git mpi
+	apt clean
+	
+	echo "Installing Blender"
+    mkdir -p /blan
+    wget -q https://mirror.clarkson.edu/blender/release/Blender2.82/blender-2.82a-linux64.tar.xz
+    tar -xf /blender-2.82a-linux64.tar.xz -C /blan
+    rm /blender-2.82a-linux64.tar.xz
+    chmod -R 777 /blan
+	
+	echo "Installing python libraries"
+	conda create -n blan1 python=3.7
+	pip install --no-cache-dir \
+		tensorflow==2.2.0rc0 tensorflow_datasets
+	
+	conda install -y ipython pandas toolz matplotlib imageio 
+		click pyyaml bokeh tables mpi4py pytest
+
+
+%environment
+    export LC_ALL=C.UTF-8
+    export LANG=C.UTF-8
+	
+%labels
+    Author DarikGamble
