@@ -7,7 +7,7 @@ From: ubuntu:18.04
 %post
     apt -y update
     apt -y install --no-install-recommends \
-		xz-utils blender wget git openmpi-bin mpi mpich
+		xz-utils blender wget git openmpi-bin mpi mpich snapd
 	apt clean
 
 	echo "Installing conda"
@@ -31,11 +31,7 @@ From: ubuntu:18.04
 	echo "conda activate blan1" >> $SINGULARITY_ENVIRONMENT
 
 	echo "Installing Blender"
-    mkdir -p /blan
-    wget -q --no-check-certificate https://mirror.clarkson.edu/blender/release/Blender2.82/blender-2.82a-linux64.tar.xz
-    tar -xf /blender-2.82a-linux64.tar.xz -C /blan
-    rm /blender-2.82a-linux64.tar.xz
-    chmod -R 777 /blan
+    snap install blender --classic
 
 
 %environment
