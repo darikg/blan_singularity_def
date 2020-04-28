@@ -31,8 +31,6 @@ From: ubuntu:18.04
 	echo "conda activate blan1" >> $SINGULARITY_ENVIRONMENT
 
 	echo "Installing Blender"
-    snap install blender --classic
-	
 	mkdir /blender-git
 	cd /blender-git
 	git clone https://git.blender.org/blender.git
