@@ -7,7 +7,7 @@ From: ubuntu:18.04
 %post
     apt -y update
     apt -y install --no-install-recommends \
-		xz-utils blender wget git openmpi-bin
+		xz-utils blender wget git openmpi-bin mpi mpich
 	apt clean
 
 	echo "Installing conda"
