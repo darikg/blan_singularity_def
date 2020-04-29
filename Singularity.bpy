@@ -30,9 +30,12 @@ From: ubuntu:18.04
 	# echo ". /conda/etc/profile.d/conda.sh" >> $SINGULARITY_ENVIRONMENT
 	# echo "conda activate blan1" >> $SINGULARITY_ENVIRONMENT
 
-	echo "Installing Blender"
-	export TERM=xterm
+	echo "Installing Blender"    
+	apt -y update
+    apt -y install --no-install-recommends git
+	
 	# Blender git host uses self signed certificates or something i dont understand thi
+	export TERM=xterm
 	git config --global http.sslVerify false
 	mkdir /blender-git
 	cd /blender-git
