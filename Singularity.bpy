@@ -7,7 +7,7 @@ From: ubuntu:18.04
 %post
     apt -y update
     apt -y install --no-install-recommends \
-		xz-utils wget git openmpi-bin mpi mpich build-essentials
+		xz-utils wget git openmpi-bin mpi mpich build-essential
 	apt clean
 	
 	echo "Installing conda"
