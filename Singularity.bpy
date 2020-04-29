@@ -7,7 +7,7 @@ From: ubuntu:18.04
 %post
     apt -y update
     apt -y install --no-install-recommends \
-		xz-utils blender wget git openmpi-bin mpi mpich
+		xz-utils wget git openmpi-bin mpi mpich build-essentials
 	apt clean
 	
 	echo "Installing conda"
@@ -15,8 +15,7 @@ From: ubuntu:18.04
 	bash Miniconda3-latest-Linux-x86_64.sh -b -p /conda
 	rm Miniconda3-latest-Linux-x86_64.sh
 	chmod -R 777 /conda
-	
-			
+				
 	echo "Installing python libraries"
 	/conda/bin/conda create -y -n blan1 python=3.7
 	. /conda/etc/profile.d/conda.sh
