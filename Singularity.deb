@@ -15,7 +15,7 @@ From: debian:latest
     apt -y update
     apt -y install --no-install-recommends \
 		xz-utils wget git openmpi-bin mpi mpich build-essential cmake autoconf automake libtool yasm nasm tcl gawk libjpeg-dev \
-		libtheora-dev libvorbis-dev libogg-dev libx264-dev libopenjp2-7-dev
+		libtheora-dev libvorbis-dev libogg-dev libx264-dev libopenjp2-7-dev libpng-dev libpng-def libtiff-dev
 	apt clean
 	
 	echo "Installing conda"
