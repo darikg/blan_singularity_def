@@ -1,11 +1,21 @@
 BootStrap: docker
 From: debian:latest
 
+# lastfail
+#dpkg-query: no packages found matching libglew-dev
+# ./blender/build_files/build_environment/install_deps.sh: line 1100: 10#Provides: value too great for base (error token is "10#Provides")
+##pkg-query: package 'libtheora-dev' is not installed
+#dpkg-query: package 'libvorbis-dev' is not installed
+#dpkg-query: package 'libogg-dev' is not installed
+#dpkg-query: package 'libx264-dev' is not installed
+#dpkg-query: package 'libopenjp2-7-dev' is not installed
+
 
 %post
     apt -y update
     apt -y install --no-install-recommends \
-		xz-utils wget git openmpi-bin mpi mpich build-essential cmake autoconf automake libtool yasm nasm tcl gawk libjpeg-dev
+		xz-utils wget git openmpi-bin mpi mpich build-essential cmake autoconf automake libtool yasm nasm tcl gawk libjpeg-dev \
+		libtheora-dev libvorbis-dev libogg-dev libx264-dev libopenjp2-7-dev
 	apt clean
 	
 	echo "Installing conda"
