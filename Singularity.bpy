@@ -7,7 +7,7 @@ From: ubuntu:18.04
 %post
     apt -y update
     apt -y install --no-install-recommends \
-		xz-utils wget git openmpi-bin mpi mpich build-essential
+		xz-utils wget git openmpi-bin mpi mpich build-essential cmake autoconf automake libtool yasm nasm tcl
 	apt clean
 	
 	echo "Installing conda"
@@ -49,6 +49,7 @@ From: ubuntu:18.04
 
 	cd /blender-git/blender
 	export PYTHON_SITE_PACKAGES=/conda/envs/blan1/lib/python3.7/site-packages
+	#export PYTHON_ROOT_DIR=/bpy
 	make bpy
 	
 	chmod -R 777 /blender-git
