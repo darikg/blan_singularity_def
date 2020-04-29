@@ -42,7 +42,7 @@ From: ubuntu:18.04
 	git submodule foreach git pull --rebase origin master
 
 	cd /blender-git
-	./blender/build_files/build_environment/install_deps.sh
+	./blender/build_files/build_environment/install_deps.sh --no-confirm --no-sudo
 
 	cd /blender-git/blender
 	make bpy
