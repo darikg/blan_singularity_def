@@ -37,6 +37,7 @@ From: ubuntu:20.04
 	mkdir /bpy
     mkdir /blender-git
 	cd /blender-git
+	git config --global http.sslVerify false
 	git clone https://git.blender.org/blender.git
 
 	mkdir /blender-git/lib
