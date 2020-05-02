@@ -28,6 +28,7 @@ From: ubuntu:20.04
 
 	# BLENDER -------------------------
 	mkdir /blender
+	
 	wget -q --no-check-certificate https://mirror.clarkson.edu/blender/release/Blender2.82/blender-2.82a-linux64.tar.xz
     tar -xf /blender-2.82a-linux64.tar.xz -C /blender
     rm /blender-2.82a-linux64.tar.xz
