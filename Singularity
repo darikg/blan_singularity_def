@@ -19,7 +19,7 @@ From: ubuntu:20.04
 	conda init
 	conda activate blan1
 	conda install -y python=3.7
-	pip install --no-cache-dir tensorflow==2.2.0rc0 tensorflow_datasets pytest tables
+	pip install --no-cache-dir tensorflow==2.2.0rc0 tensorflow_datasets pytest tables tblib
 	conda install -y ipython pandas toolz matplotlib imageio click pyyaml bokeh mpi4py
 	# conda clean --all -f -y
 	
@@ -27,7 +27,7 @@ From: ubuntu:20.04
 	echo "conda activate blan1" >> $SINGULARITY_ENVIRONMENT
 
 	# BLENDER -------------------------
-	wget -q https://mirror.clarkson.edu/blender/release/Blender2.82/blender-2.82a-linux64.tar.xz
+	wget -q --no-check-certificate https://mirror.clarkson.edu/blender/release/Blender2.82/blender-2.82a-linux64.tar.xz
     tar -xf /blender-2.82a-linux64.tar.xz -C /blender
     rm /blender-2.82a-linux64.tar.xz
 	/blender/2.82/python/bin/python3.7m -m ensurepip
