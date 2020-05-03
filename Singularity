@@ -2,6 +2,9 @@ BootStrap: docker
 From: ubuntu:20.04
 
 %post
+
+	#TODO add blender to path somehow
+	
     apt -y update
     apt -y install --no-install-recommends xz-utils wget git openmpi-bin mpi mpich
 	apt clean
@@ -35,10 +38,15 @@ From: ubuntu:20.04
 	/blender-2.82a-linux64/2.82/python/bin/pip3 install pyyaml
 	chmod -R 777 /blender-2.82a-linux64
 	
+	
+	SINGULARITYENV_PREPEND_PATH=/blender-2.82a-linux64
+	
 
 %environment
     export LC_ALL=C.UTF-8
     export LANG=C.UTF-8
 	
+%test
+	echo blender -V
 %labels
     Author DarikGamble
