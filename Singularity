@@ -26,7 +26,7 @@ From: ubuntu:20.04
 	# conda clean --all -f -y
 	
 	echo ". /conda/etc/profile.d/conda.sh" >> $SINGULARITY_ENVIRONMENT
-	# echo "conda activate blan1" >> $SINGULARITY_ENVIRONMENT
+	echo "conda activate blan1" >> $SINGULARITY_ENVIRONMENT
 
 	# BLENDER -------------------------
 	# Installing blender through apt above was an easy way to get all the dependencies but we want a new version of blender itself
@@ -39,9 +39,8 @@ From: ubuntu:20.04
 	/blender-2.82a-linux64/2.82/python/bin/pip3 install pyyaml
 	apt clean
 	chmod -R 777 /blender-2.82a-linux64
+	echo "PATH=/blender-2.82a-linux64:\$PATH" >> $SINGULARITY_ENVIRONMENT
 	
-	SINGULARITYENV_PREPEND_PATH=/blender-2.82a-linux64
-
 %environment
     export LC_ALL=C.UTF-8
     export LANG=C.UTF-8
