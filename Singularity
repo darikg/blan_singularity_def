@@ -36,7 +36,7 @@ From: ubuntu:20.04
     rm /blender-2.82a-linux64.tar.xz
 	/blender-2.82a-linux64/2.82/python/bin/python3.7m -m ensurepip
 	/blender-2.82a-linux64/2.82/python/bin/pip3 install --upgrade pip
-	/blender-2.82a-linux64/2.82/python/bin/pip3 install pyyaml
+	/blender-2.82a-linux64/2.82/python/bin/pip3 install pyyaml tblib
 	apt clean
 	chmod -R 777 /blender-2.82a-linux64
 	echo "PATH=/blender-2.82a-linux64:\$PATH" >> $SINGULARITY_ENVIRONMENT
