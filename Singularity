@@ -21,7 +21,7 @@ From: ubuntu:20.04
 	conda init
 	conda activate blan1
 	conda install -y python=3.7
-	pip install --no-cache-dir tensorflow==2.2.0rc0 numpy==1.18.3 tensorflow_datasets pytest tables tblib
+	pip install --no-cache-dir tensorflow==2.2.0rc0 numpy==1.18.3 tensorflow_datasets pytest tables
 	conda install -y ipython pandas toolz matplotlib imageio click pyyaml bokeh mpi4py
 	
 	# To checK:
