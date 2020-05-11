@@ -21,8 +21,12 @@ From: ubuntu:20.04
 	conda init
 	conda activate blan1
 	conda install -y python=3.7
-	pip install --no-cache-dir tensorflow==2.2.0rc0 tensorflow_datasets pytest tables tblib
+	pip install --no-cache-dir tensorflow==2.2.0rc0 numpy==1.18.3 tensorflow_datasets pytest tables tblib
 	conda install -y ipython pandas toolz matplotlib imageio click pyyaml bokeh mpi4py
+	
+	# To checK:
+	# conda install -c conda-forge jupyterlab
+	# pip install htcondor
 	# conda clean --all -f -y
 	
 	echo ". /conda/etc/profile.d/conda.sh" >> $SINGULARITY_ENVIRONMENT
@@ -34,6 +38,9 @@ From: ubuntu:20.04
 	wget -q --no-check-certificate https://mirror.clarkson.edu/blender/release/Blender2.82/blender-2.82a-linux64.tar.xz
     tar -xf /blender-2.82a-linux64.tar.xz
     rm /blender-2.82a-linux64.tar.xz
+	
+	rm -rf /blender-2.82a-linux64/2.82/python/lib/python3.7/site-packages/numpy
+	
 	/blender-2.82a-linux64/2.82/python/bin/python3.7m -m ensurepip
 	/blender-2.82a-linux64/2.82/python/bin/pip3 install --upgrade pip
 	/blender-2.82a-linux64/2.82/python/bin/pip3 install pyyaml tblib
