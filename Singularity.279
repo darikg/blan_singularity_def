@@ -5,7 +5,7 @@ From: ubuntu:20.04
 	apt -y update
 	
 	
-	apt -y git wget cmake build-essential \
+	apt -y install git wget cmake build-essential \
 		libxi-dev openexr libsdl-dev fftw-dev libtiff-dev \
 		libfreetype6-dev libfreetype6 libogg-dev libopenjp2-7-dev libopenjp2-7 \
 		libpng-dev libglu-dev
