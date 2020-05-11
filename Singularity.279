@@ -5,10 +5,11 @@ From: ubuntu:20.04
 	apt -y update
 	
 	
-	apt -y install gcc-c++ \
-		libXi-devel openexr-devel SDL-devel fftw-devel libtiff-devel \
-		freetype-devel libogg-devel libjpeg-devel openjpeg openjpeg-devel \
-		libpng-devel vim libGLU-devel wget
+	apt -y git wget cmake build-essential \
+		libxi-dev openexr libsdl-dev fftw-dev libtiff-dev \
+		libfreetype6-dev libfreetype6 libogg-dev libopenjp2-7-dev libopenjp2-7 \
+		libpng-dev libglu-dev
+	
 		
 	cd ~ && \
 		wget -q --no-check-certificate https://www.python.org/ftp/python/3.6.6/Python-3.6.6.tgz && \
